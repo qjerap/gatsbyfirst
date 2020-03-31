@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+
+.header {
+    margin: 1rem 0;
+}
+
+.title {
+  font-family: "Sen", sans-serif;
+  color: #333;
+  font-size: 3rem;
+  text-decoration: none;
+
+
+  &:hover {
+    color: #f5c8d8;
+  }
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    color: #999;
+    font-size: .9rem;
+    margin-right: 1.3rem;
+    text-decoration: none;
+
+    &:hover {
+        color: #666;
+    }
+}
+
+.active-nav-item {
+    color: #222;
+}
