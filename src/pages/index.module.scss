@@ -1,0 +1,49 @@
+@import "../styles/var.scss";
+
+.home {
+  margin-left: -1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+
+  h1 {
+    font-size: 3rem;
+    color: #ff7272;
+
+    span {
+      position: relative;
+    }
+
+    span::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 37%;
+      bottom: 18%;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+    }
+  }
+
+  h2 {
+    color: lighten($color: #222222, $amount: 80);
+    font-size: 9rem;
+  }
+}
+
+.info {
+  position: relative;
+  padding: 1.5rem 0;
+  margin: 0 20%;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  width: 80%;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  height: 100%;
+  transform-origin: top;
+  color: var(--primary-white);
+}

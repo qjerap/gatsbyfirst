@@ -1,0 +1,91 @@
+@import "../styles/var.scss";
+
+.title {
+  position: relative;
+  font-family: var(--primary-font);
+  color: #fff;
+  text-align: center;
+  margin: 0.5rem auto;
+  width: fit-content;
+}
+
+.title::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 37%;
+  bottom: 18%;
+  left: 0;
+  right: 0;
+  background-color: var(--pink);
+}
+
+.cards {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 1rem;
+  justify-content: center;
+
+  li {
+    list-style-type: none;
+    width: 100%;
+  }
+}
+
+.card {
+  cursor: pointer;
+  border-radius: 0.1rem;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  transition: all 0.1s ease-in;
+
+  &:hover {
+    animation: rotate3d 0.5s forwards;
+  }
+
+
+  img {
+    border-radius: 0.2rem;
+    z-index: 9;
+    margin: 0;
+  }
+
+}
+
+
+
+@keyframes rotate3d {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  50% {
+    transform: rotateX(-12deg) rotateY(7deg) rotateZ(0deg) scale(0.98);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.01);
+  }
+}
+
+
+.tags {
+  position: absolute;
+  bottom: 1rem;
+  left: 0.5rem;
+  width: 100%;
+  display: flex;
+}
+
+.tag {
+  padding: 0.15rem 0.5rem;
+  margin: 0 0.25rem;
+  background-color: #fff;
+  color: var(--pink);
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+
+}
