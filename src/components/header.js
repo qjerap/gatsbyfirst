@@ -122,10 +122,6 @@ const Header = () => {
         </ul>
       </div>
 
-      <div className={headerStyles.burger}>
-        <FontAwesomeIcon icon={faBars}  />
-        
-      </div>
     </header>
   )
 }

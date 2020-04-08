@@ -1,5 +1,4 @@
-import React from "react"
-
+import React, {useState} from "react"
 
 // Components
 import Header from "./header"
@@ -11,16 +10,19 @@ import layoutStyles from "./layout.module.scss"
 
 
 const Layout = props => {
+
+  const [showModal, setShowModal] = useState(true)
+
+
+  
   return (
     <>
-    <Modal />
-    <div className={layoutStyles.container}>
-    <Header />
-      <div className={layoutStyles.content}>
-        {props.children}
-      </div>
-      <Footer />
-    </div>
+        <Modal />
+        <div className={layoutStyles.container}>
+          <Header />
+          <div className={layoutStyles.content}>{props.children}</div>
+          <Footer />
+        </div>
     </>
   )
 }

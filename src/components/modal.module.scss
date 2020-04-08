@@ -1,3 +1,29 @@
+.first {
+  position: relative;
+}
+
+// Mobile NAV
+.burgerIcon {
+  position: absolute;
+  top: 1.85rem;
+  right: 2rem;
+  display: none;
+  cursor: pointer;
+  color: var(--pink);
+  font-size: 2em;
+  opacity: 0.5;
+  transition: all 0.1s ease-in;
+
+  &:hover {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+
+  @media (max-width: 900px) {
+    display: block;
+  }
+}
+
 .burger {
   display: block;
   position: fixed;

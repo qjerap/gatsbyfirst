@@ -36,10 +36,18 @@
 }
 
 .title {
+  // font-size: 1.9em;
   position: relative;
   width: max-content;
   color: #fff;
   text-transform: uppercase;
+
+  @media(max-width: 500px) {
+    font-size: 2.1em;
+  }
+  @media(max-width: 380px) {
+    font-size: 1.9em;
+  }
 }
 
 .title::before {
