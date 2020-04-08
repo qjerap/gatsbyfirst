@@ -6,6 +6,7 @@ import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 import headerStyles from "./header.module.scss"
 // FontAwewsome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
 import {
   faFacebook,
   faLinkedin,
@@ -66,7 +67,6 @@ const Header = () => {
             <TransitionLink
               exit={{
                 length: 0.4,
-
               }}
               entry={{
                 delay: 0.4,
@@ -120,6 +120,11 @@ const Header = () => {
             </a>
           </li>
         </ul>
+      </div>
+
+      <div className={headerStyles.burger}>
+        <FontAwesomeIcon icon={faBars}  />
+        
       </div>
     </header>
   )

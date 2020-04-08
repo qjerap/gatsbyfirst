@@ -66,6 +66,7 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
         return (
           <Layout>
             <motion.div
+            className={portfolioStyles.portfolio}
               initial="hidden"
               variants={containerVariants}
               animate={

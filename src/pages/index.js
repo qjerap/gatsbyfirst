@@ -31,7 +31,7 @@ const IndexPage = () => {
       >
         <h2>Hello!</h2>
         <h1>
-          I'm Romain Pareja, a{" "}
+          <span className={indexStyles.linebreak}>I'm Romain Pareja,</span> a{" "}
            <span className={indexStyles.headAccent}>Frontend</span> developer.
         </h1>
 
