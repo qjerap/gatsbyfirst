@@ -7,23 +7,17 @@ import headerStyles from "./header.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons"
 
-const Modal = () => {
-  const [showModal, setShowModal] = useState(false)
+const Modal = (props) => {
 
-  const toggleModal = () => {
-    setShowModal(!showModal)
-  }
-
+console.log(props);
   return (
     <div className={modalStyles.first}>
-      <div className={modalStyles.burgerIcon}>
-        <FontAwesomeIcon onClick={toggleModal} icon={faBars} />
-      </div>
-      {showModal === true && (
+
+      {props.showModal === true && (
         <div className={modalStyles.burger}>
           <div className={modalStyles.container}>
             <div className={modalStyles.close}>
-              <FontAwesomeIcon onClick={toggleModal} icon={faTimes} size="2x" />
+              <FontAwesomeIcon onClick={props.toggleModal} icon={faTimes} size="2x" />
             </div>
             <ul>
               <li>

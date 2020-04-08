@@ -13,7 +13,7 @@ import {
   faGit,
 } from "@fortawesome/free-brands-svg-icons"
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className={headerStyles.header}>
       <div className={headerStyles.title}>
@@ -122,6 +122,11 @@ const Header = () => {
         </ul>
       </div>
 
+      <div className={headerStyles.burgerIcon}>
+        <FontAwesomeIcon  
+        onClick={props.toggleModal}
+        icon={faBars} />
+      </div>
     </header>
   )
 }

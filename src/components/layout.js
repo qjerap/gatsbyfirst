@@ -11,15 +11,19 @@ import layoutStyles from "./layout.module.scss"
 
 const Layout = props => {
 
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
+
+  const toggleModal = () => {
+    setShowModal(!showModal)
+  }
 
 
   
   return (
     <>
-        <Modal />
+        <Modal  toggleModal={toggleModal} showModal={showModal}/>
         <div className={layoutStyles.container}>
-          <Header />
+          <Header toggleModal={toggleModal}/>
           <div className={layoutStyles.content}>{props.children}</div>
           <Footer />
         </div>
