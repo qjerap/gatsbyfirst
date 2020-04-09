@@ -5,6 +5,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  @media(max-width: 500px) {max-width: 83%;}
 }
 
 .content {
@@ -12,4 +14,9 @@
   flex-direction: column;
   margin-top: 5%;
   flex-grow: 1;
+
+  @media (max-width: 800px) {
+
+    margin-top: 10%;
+  }
 }

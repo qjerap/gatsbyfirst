@@ -7,10 +7,6 @@
   @media (max-width: 1300px) {
     grid-template-columns: 1fr;
   }
-
-  @media (max-width: 800px) {
-    margin-top: 10%;
-  }
 }
 
 .description {
@@ -18,6 +14,10 @@
   color: var(--primary-white);
   font-size: 0.9em;
   text-align: justify;
+
+  @media (max-width: 800px) {
+    font-size: 1.1em;
+  }
 }
 
 .title-and-date {
@@ -42,10 +42,10 @@
   color: #fff;
   text-transform: uppercase;
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     font-size: 2.1em;
   }
-  @media(max-width: 380px) {
+  @media (max-width: 380px) {
     font-size: 1.9em;
   }
 }
@@ -70,7 +70,7 @@
 .tags {
   display: flex;
   margin: -1rem 0 0 0;
-  font-size: .6rem;
+  font-size: 0.6rem;
 }
 
 .tag,
@@ -95,7 +95,7 @@
   margin: 3rem 0 0;
   cursor: pointer;
 
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     justify-content: center;
   }
 

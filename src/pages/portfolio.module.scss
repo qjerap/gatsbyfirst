@@ -1,9 +1,7 @@
 @import "../styles/var.scss";
 
 .portfolio {
-  @media (max-width: 800px) {
-    margin-top: 10%;
-  }
+
 }
 
 .title {
@@ -31,7 +29,7 @@
 
 .cards {
   margin: 0;
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-gap: 1rem;
