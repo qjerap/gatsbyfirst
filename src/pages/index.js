@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 
 // components
 import "../styles/index.scss"
@@ -32,7 +33,7 @@ const IndexPage = () => {
         <h2>Hello!</h2>
         <h1>
           <span className={indexStyles.linebreak}>I'm Romain Pareja,</span> a{" "}
-           <span className={indexStyles.headAccent}>Frontend</span> developer.
+          <span className={indexStyles.headAccent}>Frontend</span> developer.
         </h1>
 
         <div className={indexStyles.info}>
@@ -49,10 +50,34 @@ const IndexPage = () => {
             tempora at!
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            nesciunt porro aspernatur doloribus id alias, quisquam, nobis, fugit
-            corrupti omnis pariatur unde eaque aperiam maxime reprehenderit
-            labore quos deserunt minima!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta
+            dignissimos quam deleniti quia, quae impedit eius consectetur
+            tenetur cum aperiam. If you want to know more about my works or
+            myself, feel free to check my{" "}
+            <TransitionLink
+              exit={{
+                length: 0.4,
+              }}
+              entry={{
+                delay: 0.4,
+              }}
+              to="/blog"
+            >
+              portfolio
+            </TransitionLink>{" "}
+            and to{" "}
+            <TransitionLink
+              exit={{
+                length: 0.4,
+              }}
+              entry={{
+                delay: 0.4,
+              }}
+              to="/contact"
+            >
+              contact
+            </TransitionLink>{" "}
+            me!
           </p>
         </div>
       </motion.div>

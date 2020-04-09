@@ -4,7 +4,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 import { motion } from "framer-motion"
 
-
 // components
 import Layout from "../components/layout"
 // CSS
@@ -136,7 +135,17 @@ const Blog = (props, { children, transitionStatus, entry, exit }) => {
 
                   <ul className={projectStyles.links}>
                     <li>
-                      <FontAwesomeIcon icon={faLongArrowAltLeft} />
+                      <TransitionLink
+                        exit={{
+                          length: 0.4,
+                        }}
+                        entry={{
+                          delay: 0.4,
+                        }}
+                        to="/blog"
+                      >
+                        <FontAwesomeIcon icon={faLongArrowAltLeft} />
+                      </TransitionLink>
                     </li>
                     <li>
                       <FontAwesomeIcon icon={faCode} />

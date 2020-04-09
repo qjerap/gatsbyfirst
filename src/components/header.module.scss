@@ -11,9 +11,7 @@
   justify-content: space-between;
   font-family: "Sen", sans-serif;
 
-  @media (max-width: 900) {
-    // justify-content: unset;
-  }
+
 
   ul,
   li,
@@ -34,11 +32,15 @@
     font-size: 2em;
     font-weight: 700;
     text-decoration: none;
+
+
   }
 
   a:hover {
     color: #fff;
   }
+
+
 }
 
 // @@@@ NAV @@@@
