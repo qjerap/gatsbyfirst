@@ -11,10 +11,13 @@ import layoutStyles from "./layout.module.scss"
 
 const Layout = props => {
 
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState("hidden")
 
   const toggleModal = () => {
-    setShowModal(!showModal)
+    if(showModal === "hidden") {setShowModal("show")}
+    else if (showModal === "show") {setShowModal("hidden")}
+    
+
   }
 
 

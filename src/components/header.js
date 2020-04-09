@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link } from "gatsby"
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 
@@ -14,6 +14,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 
 const Header = (props) => {
+  const [animateMobileNav, setAnimateMobileNav] = useState(false);
+
+
   return (
     <header className={headerStyles.header}>
       <div className={headerStyles.title}>
