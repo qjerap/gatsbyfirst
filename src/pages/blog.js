@@ -17,10 +17,11 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
             title
             slug
             description
+            techUsed
             publishedDate(formatString: "MMMM Do, YYYY")
             image {
-              file {
-                url
+              resize(width: 450) {
+                src
               }
             }
           }
@@ -66,7 +67,7 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
         return (
           <Layout>
             <motion.div
-            className={portfolioStyles.portfolio}
+              className={portfolioStyles.portfolio}
               initial="hidden"
               variants={containerVariants}
               animate={
@@ -78,8 +79,14 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
               <h1 className={portfolioStyles.title}>My recent work</h1>
               <ol className={portfolioStyles.cards}>
                 {blogs.map(blog => {
-                  const { title, publishedDate, slug, description } = blog.node
-                  const imgURL = blog.node.image.file.url
+                  const {
+                    title,
+                    publishedDate,
+                    slug,
+                    description,
+                    techUsed,
+                  } = blog.node
+                  const imgURL = blog.node.image.resize.src
                   return (
                     <li key={publishedDate}>
                       <div className={portfolioStyles.card}>
@@ -96,8 +103,14 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
                             <img src={imgURL} alt="" />
 
                             <div className={portfolioStyles.tags}>
-                              <div className={portfolioStyles.tag}>REACT</div>
-                              <div className={portfolioStyles.tag}>REDUX</div>
+                              {techUsed.length > 0 &&
+                                techUsed.map(tech => {
+                                  return (
+                                    <div className={portfolioStyles.tag}>
+                                      {tech}
+                                    </div>
+                                  )
+                                })}
                             </div>
                           </div>
                         </TransitionLink>

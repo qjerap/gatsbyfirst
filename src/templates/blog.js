@@ -20,10 +20,13 @@ export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: { eq: $slug }) {
       title
+      techUsed
+      gitCode
+      liveUrl
       publishedDate(formatString: "MMMM, YYYY")
       image {
-        file {
-          url
+        resize(width: 700) {
+          src
         }
       }
       body {
@@ -34,8 +37,14 @@ export const query = graphql`
 `
 
 const Blog = (props, { children, transitionStatus, entry, exit }) => {
-  const { title, publishedDate } = props.data.contentfulBlogPost
-  const imgURL = props.data.contentfulBlogPost.image.file.url
+  const {
+    title,
+    publishedDate,
+    techUsed,
+    gitCode,
+    liveUrl,
+  } = props.data.contentfulBlogPost
+  const imgURL = props.data.contentfulBlogPost.image.resize.src
 
   const options = {
     renderNode: {
@@ -94,8 +103,10 @@ const Blog = (props, { children, transitionStatus, entry, exit }) => {
                   <img src={imgURL} alt="" />{" "}
                   <div className={projectStyles.tech}>
                     <ul className={projectStyles.tags}>
-                      <li className={projectStyles.tag}>react</li>
-                      <li className={projectStyles.tag}>css</li>
+                      {techUsed.length > 0 &&
+                        techUsed.map(tech => {
+                          return <li className={projectStyles.tag}>{tech}</li>
+                        })}
                     </ul>
                   </div>
                 </div>
@@ -148,10 +159,16 @@ const Blog = (props, { children, transitionStatus, entry, exit }) => {
                       </TransitionLink>
                     </li>
                     <li>
-                      <FontAwesomeIcon icon={faCode} />
+                      <a href={gitCode} target="_blank">
+                        {" "}
+                        <FontAwesomeIcon icon={faCode} />
+                      </a>
                     </li>
                     <li>
-                      <FontAwesomeIcon icon={faEye} />
+                      <a href={liveUrl} target="_blank">
+                        {" "}
+                        <FontAwesomeIcon icon={faEye} />
+                      </a>
                     </li>
                   </ul>
                 </div>

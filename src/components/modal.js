@@ -95,6 +95,7 @@ const Modal = props => {
                   delay: 0.3,
                 }}
                 to="/contact"
+                onClick={props.toggleModal}
                 className={headerStyles.navItem}
                 activeClassName={headerStyles.activeNavItem}
               >
