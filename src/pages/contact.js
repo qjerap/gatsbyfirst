@@ -8,9 +8,11 @@ import Layout from "../components/layout"
 // CSS
 import contactStyles from "./contact.module.scss"
 // ICONS
-// ICONS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons"
+// Header
+import Head from "../components/head"
+
 
 
 function encode(data) {
@@ -76,6 +78,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
         console.log(transitionStatus)
         return (
           <Layout>
+          <Head title="Contact"/>
             <motion.div
               initial="hidden"
               variants={containerVariants}

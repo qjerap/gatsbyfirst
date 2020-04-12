@@ -6,10 +6,11 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'portfolio',
+    title: 'Romain Pareja',
     author: 'Romain Pareja'
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-contentful`,
       options: {

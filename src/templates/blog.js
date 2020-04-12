@@ -15,6 +15,9 @@ import {
   faEye,
   faLongArrowAltLeft,
 } from "@fortawesome/free-solid-svg-icons"
+// Header
+import Head from "../components/head"
+
 
 export const query = graphql`
   query($slug: String!) {
@@ -25,7 +28,7 @@ export const query = graphql`
       liveUrl
       publishedDate(formatString: "MMMM, YYYY")
       image {
-        resize(width: 700) {
+        resize(width: 800) {
           src
         }
       }
@@ -89,6 +92,7 @@ const Blog = (props, { children, transitionStatus, entry, exit }) => {
         console.log(transitionStatus)
         return (
           <Layout>
+          <Head title={title}/>
             <motion.div
               initial="hidden"
               variants={containerVariants}

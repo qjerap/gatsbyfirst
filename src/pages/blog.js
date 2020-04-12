@@ -7,6 +7,9 @@ import { motion } from "framer-motion"
 import Layout from "../components/layout"
 // CSS
 import portfolioStyles from "./portfolio.module.scss"
+// Header
+import Head from "../components/head"
+
 
 const BlogPage = ({ children, transitionStatus, entry, exit }) => {
   const data = useStaticQuery(graphql`
@@ -66,6 +69,7 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
         console.log(transitionStatus)
         return (
           <Layout>
+          <Head title="Portfolio"/>
             <motion.div
               className={portfolioStyles.portfolio}
               initial="hidden"

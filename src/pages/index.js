@@ -3,9 +3,12 @@ import { motion } from "framer-motion"
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 
 // components
-import "../styles/index.scss"
 import Layout from "../components/layout"
+// CSS
+import "../styles/index.scss"
 import indexStyles from "./index.module.scss"
+// Head
+import Head from "../components/head"
 
 const IndexPage = () => {
   const [onLoadAnimation, setOnLoadAnimation] = useState(false)
@@ -57,6 +60,7 @@ const IndexPage = () => {
         console.log(transitionStatus)
         return (
           <Layout>
+            <Head title="Home"/>
             <motion.div
               initial="hidden"
               variants={containerVariants}
