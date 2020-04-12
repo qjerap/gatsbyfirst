@@ -12,6 +12,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons"
 
 const ContactPage = ({ children, transitionStatus, entry, exit }) => {
+  const [state, setState] = React.useState({})
+
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
+  }
+
+
+
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -63,10 +86,17 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                 </div>
 
                 <div className={contactStyles.innerGrid}>
-                <form method="post" netlify-honeypot="bot-field" data-netlify="true">
-                <input type="hidden" name="bot-field" />
+                  <form
+                    name="contact"
+                    method="post"
+                    data-netlify-honeypot="bot-field"
+                    data-netlify="true"
+                    onSubmit={handleSubmit}
+                  >
+                    <input type="hidden" name="form-name" value="contact" />{" "}
                     <label>
                       <input
+                        onChange={handleChange}
                         placeholder="Your name"
                         type="text"
                         name="name"
@@ -75,6 +105,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                     </label>
                     <label>
                       <input
+                        onChange={handleChange}
                         placeholder="Your email"
                         type="email"
                         name="email"
@@ -83,6 +114,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                     </label>
                     <label>
                       <textarea
+                        onChange={handleChange}
                         placeholder="Your message here..."
                         name="message"
                         id="message"
