@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from 'gatsby-link'
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 import { motion } from "framer-motion"
 
@@ -11,6 +12,13 @@ import contactStyles from "./contact.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons"
 
+
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 const ContactPage = ({ children, transitionStatus, entry, exit }) => {
   const [state, setState] = React.useState({})
 
@@ -18,22 +26,20 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        'form-name': form.getAttribute('name'),
+        "form-name": form.getAttribute("name"),
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error))
   }
-
-
 
   const containerVariants = {
     hidden: {
@@ -91,6 +97,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                     method="post"
                     data-netlify-honeypot="bot-field"
                     data-netlify="true"
+                    action="/thanks/"
                     onSubmit={handleSubmit}
                   >
                     <input type="hidden" name="form-name" value="contact" />{" "}
