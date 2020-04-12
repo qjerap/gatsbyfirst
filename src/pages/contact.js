@@ -63,7 +63,8 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                 </div>
 
                 <div className={contactStyles.innerGrid}>
-                  <form method="post" action="#">
+                <form method="post" netlify-honeypot="bot-field" data-netlify="true">
+                <input type="hidden" name="bot-field" />
                     <label>
                       <input
                         placeholder="Your name"
