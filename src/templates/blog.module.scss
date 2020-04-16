@@ -11,7 +11,7 @@
 
 .description {
   margin-top: -8px;
-  color: var(--primary-white);
+  color: darken($color: #fff, $amount: 30);
   font-size: 0.9em;
   text-align: justify;
 

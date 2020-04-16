@@ -1,13 +1,12 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
+import React from "react"
+import TransitionLink from "gatsby-plugin-transition-link"
 import { motion } from "framer-motion"
 // CSS
 import modalStyles from "./modal.module.scss"
 import headerStyles from "./header.module.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons"
+import { faTimes  } from "@fortawesome/free-solid-svg-icons"
 
 const Modal = props => {
   const containerVariants = {

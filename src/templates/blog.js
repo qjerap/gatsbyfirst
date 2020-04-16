@@ -52,7 +52,6 @@ const Blog = (props, { children, transitionStatus, entry, exit }) => {
   const options = {
     renderNode: {
       "embedded-asset-block": node => {
-        console.log(node.data.target)
       },
     },
   }
@@ -89,7 +88,6 @@ const Blog = (props, { children, transitionStatus, entry, exit }) => {
   return (
     <TransitionState>
       {({ transitionStatus }) => {
-        console.log(transitionStatus)
         return (
           <Layout>
           <Head title={title}/>
@@ -125,28 +123,7 @@ const Blog = (props, { children, transitionStatus, entry, exit }) => {
                     props.data.contentfulBlogPost.body.json,
                     options
                   )}
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Incidunt, enim facere. Libero aliquid tenetur iste et neque
-                    quo dolorem autem sunt itaque quod perspiciatis facilis
-                    tempore maiores nihil illum, ipsam molestias, earum
-                    sapiente! Suscipit doloribus iure, deserunt optio molestias
-                    inventore reiciendis, placeat vitae culpa itaque distinctio
-                    rem saepe est reprehenderit.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex,
-                    vitae. Lorem, ipsum dolor sit amet consectetur adipisicing
-                    elit. Dolorem quidem natus nemo, similique dolorum quibusdam
-                    unde omnis adipisci praesentium facilis.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Rerum cumque fugit corrupti unde cupiditate provident itaque
-                    eum repellat, sint eos ipsum numquam minima temporibus ad
-                    illum velit ea totam vero perspiciatis molestias veniam
-                    aliquid atque omnis? Impedit sequi adipisci molestiae!
-                  </p>
+
 
                   <ul className={projectStyles.links}>
                     <li>

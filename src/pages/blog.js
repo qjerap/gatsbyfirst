@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 import { motion } from "framer-motion"
 
@@ -9,7 +9,6 @@ import Layout from "../components/layout"
 import portfolioStyles from "./portfolio.module.scss"
 // Header
 import Head from "../components/head"
-
 
 const BlogPage = ({ children, transitionStatus, entry, exit }) => {
   const data = useStaticQuery(graphql`
@@ -66,10 +65,9 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
   return (
     <TransitionState>
       {({ transitionStatus }) => {
-        console.log(transitionStatus)
         return (
           <Layout>
-          <Head title="Portfolio"/>
+            <Head title="Portfolio" />
             <motion.div
               className={portfolioStyles.portfolio}
               initial="hidden"
@@ -84,10 +82,8 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
               <ol className={portfolioStyles.cards}>
                 {blogs.map(blog => {
                   const {
-                    title,
                     publishedDate,
                     slug,
-                    description,
                     techUsed,
                   } = blog.node
                   const imgURL = blog.node.image.resize.src

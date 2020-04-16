@@ -75,7 +75,6 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
   return (
     <TransitionState>
       {({ transitionStatus }) => {
-        console.log(transitionStatus)
         return (
           <Layout>
           <Head title="Contact"/>

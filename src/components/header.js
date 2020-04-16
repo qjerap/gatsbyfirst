@@ -1,6 +1,5 @@
 import React, {useState} from "react"
-import { Link } from "gatsby"
-import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
+import TransitionLink from "gatsby-plugin-transition-link"
 
 // CSS
 import headerStyles from "./header.module.scss"
@@ -14,7 +13,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 
 const Header = (props) => {
-  const [animateMobileNav, setAnimateMobileNav] = useState(false);
+  // const [animateMobileNav, setAnimateMobileNav] = useState(false);
 
 
   return (
@@ -74,18 +73,9 @@ const Header = (props) => {
               entry={{
                 delay: 0.4,
                 trigger: async pages => {
-                  // wait until we have access to both pages
                   const exit = await pages.exit
                   const entry = await pages.entry
-                  // here we can access both pages
-
-                  // You could measure the entry element here
-
-                  // start exit animation based on measurements if you want
-                  // wait for the entering page to become visible
                   await entry.visible
-                  // the entering page is visible here.
-                  // if you want you can animate it now!
                 },
               }}
               className={headerStyles.navItem}

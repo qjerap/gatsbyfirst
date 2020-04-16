@@ -57,10 +57,9 @@ const IndexPage = () => {
   return (
     <TransitionState>
       {({ transitionStatus }) => {
-        console.log(transitionStatus)
         return (
           <Layout>
-            <Head title="Home"/>
+            <Head title="Home" />
             <motion.div
               initial="hidden"
               variants={containerVariants}
@@ -82,23 +81,22 @@ const IndexPage = () => {
 
               <div className={indexStyles.info}>
                 <p>
-                  I am an experience freelance graphic designer based in Nwy
-                  York, USA. I have worked in the creative industry for over
-                  fifteen years, starting out in publishing (working on
-                  magazines and newspapers ) before moving into design agency
-                  work.
-                </p>
-
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Eligendi, ratione deserunt. Unde fugit corrupti distinctio.
-                  Cum quas ipsam tempora at!
+                  I am a self-taugh developer. I love to challenge myself
+                  everyday and learn new skills. I have a baccalaureat in
+                  Geography and a master in Tourism Management. My university
+                  background taught me a lot about methodology, soft skills and
+                  and group work.
                 </p>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dicta dignissimos quam deleniti quia, quae impedit eius
-                  consectetur tenetur cum aperiam. If you want to know more
-                  about my works or myself, feel free to check my{" "}
+                  {" "}
+                  But I have allways been passionated with computer and
+                  internet. For the last 18 monthes web developement has been my
+                  routine. While I may not have a decade of experience, I'm
+                  hardworking, perfectionist and determined.
+                </p>
+                <p>
+                  If you want to know more about my works or myself, feel free
+                  to check my{" "}
                   <TransitionLink
                     exit={{
                       length: 0.4,
