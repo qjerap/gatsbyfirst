@@ -45,6 +45,16 @@
 
 // @@@@ NAV @@@@
 
+nav {
+
+
+  width: 500px;
+
+  @media (max-width: 1235px) {
+    width: fit-content;
+  }
+}
+
 .nav-list {
   // flex-direction: column;
   // align-content: center;
@@ -56,6 +66,7 @@
   padding: 0;
   justify-content: center;
 
+
   @media (max-width: 900px) {
     display: none;
   }
@@ -64,11 +75,13 @@
 .nav-item {
   position: relative;
   color: var(--secondary-white);
-  margin: 0;
-  padding: 0 1rem;
+  margin: 0 1rem;
+  padding: 0 .5rem;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2em;
+  width: 400px;
+
 
   &:hover {
     color: #fff;
