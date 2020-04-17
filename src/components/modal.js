@@ -6,7 +6,7 @@ import modalStyles from "./modal.module.scss"
 import headerStyles from "./header.module.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTimes  } from "@fortawesome/free-solid-svg-icons"
+import { faTimes } from "@fortawesome/free-solid-svg-icons"
 
 const Modal = props => {
   const containerVariants = {
@@ -94,7 +94,6 @@ const Modal = props => {
                   delay: 0.3,
                 }}
                 to="/contact"
-                onClick={props.toggleModal}
                 className={headerStyles.navItem}
                 activeClassName={headerStyles.activeNavItem}
               >

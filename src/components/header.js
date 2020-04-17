@@ -45,6 +45,7 @@ const Header = (props) => {
               className={headerStyles.navItem}
               activeClassName={headerStyles.activeNavItem}
               to="/"
+              active
             >
               About
             </TransitionLink>
