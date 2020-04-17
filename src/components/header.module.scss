@@ -79,17 +79,17 @@
   color: #fff;
 }
 
-// .active-nav-item::before {
-//   content: "";
-//   z-index: -1;
-//   position: absolute;
-//   top: 10%;
-//   bottom: 5%;
-//   left: 0;
-//   right: 0;
-//   background-color: #ff7272;
-//   transform: skew(25deg);
-// }
+.active-nav-item::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 10%;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  background-color: #ff7272;
+  transform: skew(25deg);
+}
 
 // @@@@ MEDIA @@@@
 

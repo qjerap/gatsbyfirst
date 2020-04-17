@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import TransitionLink from "gatsby-plugin-transition-link"
 
 // CSS
@@ -43,9 +43,9 @@ const Header = (props) => {
                 delay: 0.4,
               }}
               className={headerStyles.navItem}
+              active
               activeClassName={headerStyles.activeNavItem}
               to="/"
-              active
             >
               About
             </TransitionLink>
