@@ -45,15 +45,7 @@
 
 // @@@@ NAV @@@@
 
-nav {
 
-
-  width: 500px;
-
-  @media (max-width: 1235px) {
-    width: fit-content;
-  }
-}
 
 .nav-list {
   // flex-direction: column;
@@ -64,7 +56,6 @@ nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  justify-content: center;
 
 
   @media (max-width: 900px) {
@@ -80,7 +71,6 @@ nav {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2em;
-  width: 400px;
 
 
   &:hover {
@@ -107,8 +97,8 @@ nav {
 // @@@@ MEDIA @@@@
 
 .media {
+  min-width: 105.75px;
   display: flex;
-  justify-content: end;
 
   @media (max-width: 1100px) {
     display: none;
