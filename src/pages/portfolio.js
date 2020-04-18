@@ -10,7 +10,7 @@ import portfolioStyles from "./portfolio.module.scss"
 // Header
 import Head from "../components/head"
 
-const BlogPage = ({ children, transitionStatus, entry, exit }) => {
+const PortfolioPage = ({ children, transitionStatus, entry, exit }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
@@ -97,7 +97,7 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
                           entry={{
                             delay: 0.4,
                           }}
-                          to={`/blog/${slug}`}
+                          to={`/portfolio/${slug}`}
                         >
                           <div className={portfolioStyles.cardImg}>
                             <img src={imgURL} alt="" />
@@ -127,4 +127,4 @@ const BlogPage = ({ children, transitionStatus, entry, exit }) => {
   )
 }
 
-export default BlogPage
+export default PortfolioPage

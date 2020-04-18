@@ -134,7 +134,7 @@ const Blog = (props, { children, transitionStatus, entry, exit }) => {
                         entry={{
                           delay: 0.4,
                         }}
-                        to="/blog"
+                        to="/portfolio"
                       >
                         <FontAwesomeIcon icon={faLongArrowAltLeft} />
                       </TransitionLink>

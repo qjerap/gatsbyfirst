@@ -1,8 +1,0 @@
-
-              <Link to={`/blog/${slug}`}>
-                <h2>{title}</h2>
-                <p>{description}</p>
-                <img
-                height="300" 
-                src={imgURL} alt="" />
-              </Link>

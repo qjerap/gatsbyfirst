@@ -104,7 +104,7 @@ const IndexPage = () => {
                     entry={{
                       delay: 0.4,
                     }}
-                    to="/blog"
+                    to="/portfolio"
                   >
                     portfolio
                   </TransitionLink>{" "}
