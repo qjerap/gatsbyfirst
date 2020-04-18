@@ -1,5 +1,5 @@
 import React from "react"
-import { navigate } from 'gatsby-link'
+import { navigate } from "gatsby-link"
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 import { motion } from "framer-motion"
 
@@ -13,12 +13,10 @@ import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons"
 // Header
 import Head from "../components/head"
 
-
-
 function encode(data) {
   return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
 }
 
 const ContactPage = ({ children, transitionStatus, entry, exit }) => {
@@ -31,16 +29,18 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
-      }),
-    })
-      .then(() => navigate(form.getAttribute("action")))
-      .catch(error => alert(error))
+    if (state.name && state.email && state.message) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": form.getAttribute("name"),
+          ...state,
+        }),
+      })
+        .then(() => navigate(form.getAttribute("action")))
+        .catch(error => alert(error))
+    }
   }
 
   const containerVariants = {
@@ -77,7 +77,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
       {({ transitionStatus }) => {
         return (
           <Layout>
-          <Head title="Contact"/>
+            <Head title="Contact" />
             <motion.div
               initial="hidden"
               variants={containerVariants}
@@ -109,6 +109,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                         placeholder="Your name"
                         type="text"
                         name="name"
+                        required
                         id="name"
                       />
                     </label>
@@ -116,6 +117,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                       <input
                         onChange={handleChange}
                         placeholder="Your email"
+                        required
                         type="email"
                         name="email"
                         id="email"
@@ -127,6 +129,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                         placeholder="Your message here..."
                         name="message"
                         id="message"
+                        required
                         rows="5"
                         column="15"
                       />
