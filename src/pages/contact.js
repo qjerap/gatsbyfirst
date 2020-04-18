@@ -21,6 +21,7 @@ function encode(data) {
 
 const ContactPage = ({ children, transitionStatus, entry, exit }) => {
   const [state, setState] = React.useState({})
+  const [thank, setThank] = React.useState({ thank: false })
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -38,7 +39,11 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
           ...state,
         }),
       })
-        .then(() => navigate(form.getAttribute("action")))
+        // .then(() => navigate(form.getAttribute("action")))
+        .then(() => {
+          setState({ name: "", email: "", message: "" })
+          setThank({ thank: true })
+        })
         .catch(error => alert(error))
     }
   }
@@ -64,6 +69,35 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
     exit: {
       opacity: 0,
       y: 60,
+      transition: {
+        type: "spring",
+        damping: 200,
+        mass: 0.3,
+      },
+    },
+  }
+
+
+  const submitBtnVariants = {
+    hidden: {
+      opacity: 0,
+      x: -150,
+    },
+    show: {
+      opacity: 1,
+      translateX: 0,
+      x: 0,
+      transition: {
+        type: "spring",
+        damping: 200,
+        mass: 5,
+        delayChildren: 0.3,
+        staggerChildren: 0.05,
+      },
+    },
+    exit: {
+      opacity: 0,
+      x: -150,
       transition: {
         type: "spring",
         damping: 200,
@@ -106,6 +140,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                     <label>
                       <input
                         onChange={handleChange}
+                        value={state.name}
                         placeholder="Your name"
                         type="text"
                         name="name"
@@ -116,6 +151,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                     <label>
                       <input
                         onChange={handleChange}
+                        value={state.email}
                         placeholder="Your email"
                         required
                         type="email"
@@ -126,6 +162,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                     <label>
                       <textarea
                         onChange={handleChange}
+                        value={state.message}
                         placeholder="Your message here..."
                         name="message"
                         id="message"
@@ -134,7 +171,25 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                         column="15"
                       />
                     </label>
-                    <button type="submit">SEND MESSAGE</button>
+                    <motion.button
+                      initial="show"
+                      variants={submitBtnVariants}
+                      animate={thank.thank === true ? "exit" : "show"}
+                      type="submit"
+                    >
+                      SEND MESSAGE
+                    </motion.button>
+                    <motion.button
+                      initial="hidden"
+                      variants={submitBtnVariants}
+                      animate={thank.thank === true ? "show" : "exit"}
+                      onClick={() => {
+                        setThank({ thank: false })
+                      }}
+                      type="reset"
+                    >
+                      Thank You!
+                    </motion.button>
                   </form>
                   <ul>
                     <li>

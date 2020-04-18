@@ -5,8 +5,6 @@
   align-items: center;
   width: 100%;
 
-
-
   li {
     list-style-type: none;
   }
@@ -19,6 +17,7 @@
 
   @media (max-width: 1200px) {
     grid-template-columns: 1fr;
+    grid-gap: 4rem;
   }
 
   ul {
@@ -26,26 +25,22 @@
     grid-template-columns: 1fr;
     justify-self: start;
     align-self: start;
-
-    margin: 20%  25%;
+    margin: 12% 25%;
 
     @media (max-width: 1200px) {
       grid-template-columns: repeat(4, 1fr);
       padding: 0;
-      margin: 2rem auto;
+      margin: 5rem auto;
       grid-gap: 2rem;
       justify-self: normal;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       grid-template-columns: repeat(2, 1fr);
-
     }
 
     li {
       margin: 0.5rem 0;
-
-  
 
       a {
         text-decoration: none;
@@ -56,16 +51,13 @@
 
       a:hover {
         transform: scale(1.02);
-       padding-left: 1.5rem;
+        padding-left: 1.5rem;
 
-       @media (max-width: 1200px) {
-        transform: scale(1);
-        padding-left: 0rem;
-        color: #fff;
-        
-  
-  
-      }
+        @media (max-width: 1200px) {
+          transform: scale(1);
+          padding-left: 0rem;
+          color: #fff;
+        }
       }
 
       svg {
@@ -111,6 +103,7 @@
 // CONTACT FORM
 
 form {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -136,6 +129,10 @@ form {
   }
 
   button {
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    right: 0;
     cursor: pointer;
     margin: 1rem auto;
     border: none;
@@ -145,5 +142,9 @@ form {
     border: 2px solid var(--pink);
     color: #fff;
     width: fit-content;
+  }
+
+  button:focus {
+    outline: none;
   }
 }
