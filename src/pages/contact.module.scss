@@ -135,13 +135,16 @@ form {
     right: 0;
     cursor: pointer;
     margin: 1rem auto;
-    border: none;
     padding: 0.5rem 2rem;
     border-radius: 3rem;
     background-color: transparent;
     border: 2px solid var(--pink);
     color: #fff;
     width: fit-content;
+  }
+
+  button.success {
+    border: 2px solid #00AB66
   }
 
   button:focus {

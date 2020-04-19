@@ -1,6 +1,5 @@
 import React from "react"
-import { navigate } from "gatsby-link"
-import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
+import { TransitionState } from "gatsby-plugin-transition-link"
 import { motion } from "framer-motion"
 
 // components
@@ -81,11 +80,10 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
   const submitBtnVariants = {
     hidden: {
       opacity: 0,
-      x: -150,
+      x: 150,
     },
     show: {
       opacity: 1,
-      translateX: 0,
       x: 0,
       transition: {
         type: "spring",
@@ -180,6 +178,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                       SEND MESSAGE
                     </motion.button>
                     <motion.button
+                    className={contactStyles.success}
                       initial="hidden"
                       variants={submitBtnVariants}
                       animate={thank.thank === true ? "show" : "exit"}
@@ -188,7 +187,7 @@ const ContactPage = ({ children, transitionStatus, entry, exit }) => {
                       }}
                       type="reset"
                     >
-                      Thank You!
+                      Thank you!
                     </motion.button>
                   </form>
                   <ul>
