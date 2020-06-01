@@ -95,7 +95,7 @@ const IndexPage = () => {
                 </p>
                 <p>
                   If you want to know more about my work or myself, feel free
-                  to check ou{" "}
+                  to take a look at my{" "}
                   <TransitionLink
                     exit={{
                       length: 0.4,
