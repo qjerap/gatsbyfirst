@@ -89,14 +89,13 @@ const IndexPage = () => {
                 </p>
                 <p>
                   {" "}
-                  But I have allways been passionated with computer and
-                  internet. For the last 18 monthes web developement has been my
-                  routine. While I may not have a decade of experience, I'm
-                  hardworking, perfectionist and determined.
+                  Additionally I have allways been passionated with computers and
+                  the Internet. For the last 18 months web developement has been my
+                  routine. I'm hardworking, perfectionist, determined and imaginative.
                 </p>
                 <p>
-                  If you want to know more about my works or myself, feel free
-                  to check my{" "}
+                  If you want to know more about my work or myself, feel free
+                  to check ou{" "}
                   <TransitionLink
                     exit={{
                       length: 0.4,
