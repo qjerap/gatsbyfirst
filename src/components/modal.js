@@ -78,7 +78,7 @@ const Modal = props => {
                 entry={{
                   delay: 0.3,
                 }}
-                to="/blog"
+                to="/portfolio"
                 className={headerStyles.navItem}
                 activeClassName={headerStyles.activeNavItem}
               >
