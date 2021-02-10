@@ -81,16 +81,16 @@ const IndexPage = () => {
 
               <div className={indexStyles.info}>
                 <p>
-                  I am a self-taugh developer. I love to challenge myself
-                  everyday and learn new skills. I have a baccalaureat in
-                  Geography and a master in Tourism Management. My university
-                  background taught me a lot about methodology, soft skills and
+                  I am a self-taught developer. I love to challenge myself
+                  every day and learn new skills. I have a baccalaureate in
+                  Geography and a master's in Tourism Management. My university
+                  background taught me a lot about the methodology, soft skills and
                   and group work.
                 </p>
                 <p>
                   {" "}
-                  Additionally I have allways been passionated with computers and
-                  the Internet. For the last 18 months web developement has been my
+                  Additionally, I have always been passionate about computers and
+                  the Internet. For the last 2 years, web development has been my
                   routine. I'm hardworking, perfectionist, determined and imaginative.
                 </p>
                 <p>
