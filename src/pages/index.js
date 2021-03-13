@@ -84,8 +84,7 @@ const IndexPage = () => {
                   I am a self-taught developer. I love to challenge myself
                   every day and learn new skills. I have a baccalaureate in
                   Geography and a master's in Tourism Management. My university
-                  background taught me a lot about the methodology, soft skills and
-                  and group work.
+                  background taught me a lot about the methodology, soft skills and group work.
                 </p>
                 <p>
                   {" "}
