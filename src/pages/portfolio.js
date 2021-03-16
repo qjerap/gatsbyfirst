@@ -98,7 +98,7 @@ const PortfolioPage = ({ children, transitionStatus, entry, exit }) => {
                         >
                           <div className={portfolioStyles.cardImg}>
                             <Suspense fallback={<div>test</div>}>
-                              <SuspenseImg src={imgURL} />
+                              <img src={imgURL} alt="" />
                             </Suspense>
                             {/* <img src={imgURL} alt="" /> */}
 
