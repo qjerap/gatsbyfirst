@@ -1,7 +1,8 @@
-import React from "react"
+import React, { Suspense } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 import { motion } from "framer-motion"
+import SuspenseImg from "../tool/SuspenseImg"
 
 // components
 import Layout from "../components/layout"
@@ -81,11 +82,7 @@ const PortfolioPage = ({ children, transitionStatus, entry, exit }) => {
               <h1 className={portfolioStyles.title}>My recent work</h1>
               <ol className={portfolioStyles.cards}>
                 {blogs.map(blog => {
-                  const {
-                    publishedDate,
-                    slug,
-                    techUsed,
-                  } = blog.node
+                  const { publishedDate, slug, techUsed } = blog.node
                   const imgURL = blog.node.image.resize.src
                   return (
                     <li key={publishedDate}>
@@ -100,7 +97,10 @@ const PortfolioPage = ({ children, transitionStatus, entry, exit }) => {
                           to={`/portfolio/${slug}`}
                         >
                           <div className={portfolioStyles.cardImg}>
-                            <img src={imgURL} alt="" />
+                            <Suspense fallback={<div>test</div>}>
+                              <SuspenseImg src={imgURL} />
+                            </Suspense>
+                            {/* <img src={imgURL} alt="" /> */}
 
                             <div className={portfolioStyles.tags}>
                               {techUsed.length > 0 &&
